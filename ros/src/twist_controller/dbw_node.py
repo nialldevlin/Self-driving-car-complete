@@ -79,7 +79,7 @@ class DBWNode(object):
                                                                                    self.dbw_enabled,
                                                                                    self.angular_vel)
                 if self.dbw_enabled:
-                    self.publish(throttle, brake, steer)
+                    self.publish(self.throttle, self.brake, self.steer)
             rate.sleep()
 
     def dwb_enabled_cb(self, msg):
