@@ -91,7 +91,7 @@ class DBWNode(object):
                     rospy.loginfo("Throttle: %s, Brake: %s, Steer: %s", self.throttle, self.brake, self.steering)
             rate.sleep()
 
-    def dwb_enabled_cb(self, msg):
+    def dbw_enabled_cb(self, msg):
         self.dwb_enabled = msg
 
     def twist_cb(self, msg):
