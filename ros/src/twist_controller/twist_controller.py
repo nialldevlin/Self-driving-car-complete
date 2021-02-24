@@ -44,7 +44,7 @@ class Controller(object):
 
 		current_vel = self.vel_lpf.filt(current_vel)
 
-		steering = self.yaw_controller.get_steering(linear_velocity, angular_velocity, current_velocity)
+		steering = self.yaw_controller.get_steering(linear_vel, angular_vel, current_vel)
 
 		vel_error = linear_vel - current_vel
 		self.last_vel = current_vel
