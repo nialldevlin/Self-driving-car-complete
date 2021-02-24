@@ -87,7 +87,6 @@ class DBWNode(object):
                                                                                    self.linear_vel,
                                                                                    self.angular_vel)
                 if self.dbw_enabled:
-                    rsopy.logwarn("DBW is enabled \n")
                     self.publish(1, self.brake, self.steering)
                     
             rate.sleep()
