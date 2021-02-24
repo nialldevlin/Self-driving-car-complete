@@ -40,7 +40,6 @@ class WaypointUpdater(object):
         self.final_waypoints_pub = rospy.Publisher('final_waypoints', Lane, queue_size=1)
 
         self.pose = None
-        self.base_waypoints = None
         self.waypoints_2d = None
         self.waypoint_tree = None
         self.base_lane = None
@@ -111,7 +110,7 @@ class WaypointUpdater(object):
         self.pose = msg
 
     def waypoints_cb(self, waypoints):
-        self.base_waypoints = waypoints
+        self.base_lane = waypoints
         if not self.waypoints_2d:
             self.waypoints_2d = [[waypoint.pose.pose.position.x, waypoint.pose.pose.position.y] for waypoint in waypoints.waypoints]
             self.waypoint_tree = KDTree(self.waypoints_2d)
